@@ -4,7 +4,7 @@
 # 
 # Lars Strand - larstra (at) ifi uio no
 #
-# Last update: Sun Nov 10 20:49:57 CET 2013
+# Last update: Fri Aug 21 14:46:14 CEST 2015
 #
 
 DATE=`date +"%d_%b_%Y"`
@@ -13,10 +13,10 @@ MD5SUM="/usr/bin/md5sum"
 CURRENT="slackware-current-$DATE-DVD.iso"
 CURRENT64="slackware64-current-$DATE-DVD.iso"
 
-LOC_CURRENT="/usit/ftp1/ftp/slackware/slackware-current"
-LOC_CURRENT64="/usit/ftp1/ftp/slackware/slackware64-current"
+LOC_CURRENT="/ftp/slackware/slackware-current"
+LOC_CURRENT64="/ftp/slackware/slackware64-current"
 
-DUMP="/usit/ftp1/ftp/slackware/slackware-iso/slackware-current-iso"
+DUMP="/ftp/slackware/slackware-iso/slackware-current-iso"
 MKISOFS="/usr/bin/mkisofs"
 
 # remove the old build
