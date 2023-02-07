@@ -22,21 +22,6 @@ MKISOFS="/usr/bin/mkisofs"
 # remove the old build
 rm -rf $DUMP/*
 
-# build DVD CURRENT ISO
-cd $LOC_CURRENT/
-
-$MKISOFS -o $DUMP/$CURRENT \
--R -J -V "Slackware-current DVD" \
--x ./source \
--hide-rr-moved \
--v -d -N -no-emul-boot -boot-load-size 4 -boot-info-table \
--sort isolinux/iso.sort \
--b isolinux/isolinux.bin \
--c isolinux/isolinux.boot \
--p "Slackware-current build from slackware.no - NOT OFFICIAL" \
--publisher "Slackware-current build from slackware.no - NOT OFFICIAL" \
--A "Slackware-current DVD - build $DATE" .
-
 # build DVD CURRENT 64 ISO
 cd $LOC_CURRENT64/
 
@@ -45,9 +30,12 @@ $MKISOFS -o $DUMP/$CURRENT64 \
 -x ./source \
 -hide-rr-moved \
 -v -d -N -no-emul-boot -boot-load-size 4 -boot-info-table \
--sort isolinux/iso.sort \
--b isolinux/isolinux.bin \
--c isolinux/isolinux.boot \
+-iso-level 3 \
+-full-iso9660-filenames \
+-eltorito-alt-boot \
+-e isolinux/efiboot.img \
+-no-emul-boot \
+-isohybrid-gpt-basdat \
 -p "Slackware64-current build from slackware.no - NOT OFFICIAL" \
 -publisher "Slackware64-current build from slackware.no - NOT OFFICIAL" \
 -A "Slackware64-current DVD - build $DATE" .
